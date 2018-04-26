@@ -21,6 +21,6 @@ public class UserAlgorithms implements AlgorithmLibrary {
 
     @Override
     public Double optimize(String algorithm, Double bid) {
-        return map.get(algorithm) * bid;
+        return map.get(algorithm) != null ? map.get(algorithm) * bid: null;
     }
 }

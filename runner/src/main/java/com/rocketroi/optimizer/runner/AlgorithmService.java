@@ -24,20 +24,20 @@ public class AlgorithmService {
 
 
     public Double optimize(String algorithm, Double bid) {
-        Double bidResult = null;
+        Double optimizeResult = null;
 
         try {
             Iterator<AlgorithmLibrary> algorithms = loader.iterator();
-            while (bidResult == null && algorithms.hasNext()) {
+            while (optimizeResult == null && algorithms.hasNext()) {
                 AlgorithmLibrary d = algorithms.next();
-                bidResult = d.optimize(algorithm, bid);
+                optimizeResult = d.optimize(algorithm, bid);
             }
         } catch (ServiceConfigurationError serviceError) {
-            bidResult = null;
+            optimizeResult = null;
             serviceError.printStackTrace();
 
         }
-        return bidResult;
+        return optimizeResult;
     }
 
 
