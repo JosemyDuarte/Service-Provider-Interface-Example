@@ -13,13 +13,13 @@
     <dependencies>
         <dependency>
             <groupId>com.rocketroi</groupId>
-            <artifactId>service-provider</artifactId>
+            <artifactId>algorithm</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.rocketroi</groupId>
-            <artifactId>algorithmBuilder</artifactId>
+            <artifactId>algorithm-builder</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>runtime</scope>
         </dependency>

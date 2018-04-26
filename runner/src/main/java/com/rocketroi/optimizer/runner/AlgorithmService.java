@@ -1,6 +1,6 @@
 package com.rocketroi.optimizer.runner;
 
-import service.Algorithm;
+import service.AlgorithmLibrary;
 
 import java.util.Iterator;
 import java.util.ServiceConfigurationError;
@@ -9,10 +9,10 @@ import java.util.ServiceLoader;
 public class AlgorithmService {
 
     private static AlgorithmService service;
-    private ServiceLoader<Algorithm> loader;
+    private ServiceLoader<AlgorithmLibrary> loader;
 
     private AlgorithmService() {
-        loader = ServiceLoader.load(Algorithm.class);
+        loader = ServiceLoader.load(AlgorithmLibrary.class);
     }
 
     public static synchronized AlgorithmService getInstance() {
@@ -23,14 +23,14 @@ public class AlgorithmService {
     }
 
 
-    public Double optimize(Double bid) {
+    public Double optimize(String algorithm, Double bid) {
         Double bidResult = null;
 
         try {
-            Iterator<Algorithm> algorithms = loader.iterator();
+            Iterator<AlgorithmLibrary> algorithms = loader.iterator();
             while (bidResult == null && algorithms.hasNext()) {
-                Algorithm d = algorithms.next();
-                bidResult = d.optimize(bid);
+                AlgorithmLibrary d = algorithms.next();
+                bidResult = d.optimize(algorithm, bid);
             }
         } catch (ServiceConfigurationError serviceError) {
             bidResult = null;
