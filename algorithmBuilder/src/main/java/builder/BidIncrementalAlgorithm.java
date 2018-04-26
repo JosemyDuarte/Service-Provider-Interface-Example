@@ -1,11 +1,11 @@
-package com.rocketroi.optimizer.algorithms;
+package builder;
 
-import com.rocketroi.optimizer.provider.spi.Algorithm;
+import service.Algorithm;
 
 public class BidIncrementalAlgorithm implements Algorithm {
 
     @Override
     public Double optimize(Double bid) {
-        return bid *21;
+        return bid * 2;
     }
 }

@@ -2,18 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
     <parent>
-        <groupId>com.rocketroi</groupId>
         <artifactId>optimizer</artifactId>
+        <groupId>com.rocketroi</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>provider</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>service-provider</artifactId>
 
-    <name>Algorithms Service Provider</name>
-    <description>Provide service to consume algorithms</description>
 
 </project>

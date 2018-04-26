@@ -1,6 +1,4 @@
-package com.rocketroi.optimizer;
-
-import com.rocketroi.optimizer.provider.AlgorithmService;
+package com.rocketroi.optimizer.runner;
 
 public class OptimizerDemo {
 

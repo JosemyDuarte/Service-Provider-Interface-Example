@@ -1,4 +1,4 @@
-package com.rocketroi.optimizer.provider.spi;
+package service;
 
 public interface Algorithm {
     Double optimize(Double bid);

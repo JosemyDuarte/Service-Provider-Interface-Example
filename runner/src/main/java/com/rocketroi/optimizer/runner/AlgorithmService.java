@@ -1,6 +1,6 @@
-package com.rocketroi.optimizer.provider;
+package com.rocketroi.optimizer.runner;
 
-import com.rocketroi.optimizer.provider.spi.Algorithm;
+import service.Algorithm;
 
 import java.util.Iterator;
 import java.util.ServiceConfigurationError;
@@ -24,20 +24,20 @@ public class AlgorithmService {
 
 
     public Double optimize(Double bid) {
-        Double definition = null;
+        Double bidResult = null;
 
         try {
-            Iterator<Algorithm> dictionaries = loader.iterator();
-            while (definition == null && dictionaries.hasNext()) {
-                Algorithm d = dictionaries.next();
-                definition = d.optimize(bid);
+            Iterator<Algorithm> algorithms = loader.iterator();
+            while (bidResult == null && algorithms.hasNext()) {
+                Algorithm d = algorithms.next();
+                bidResult = d.optimize(bid);
             }
         } catch (ServiceConfigurationError serviceError) {
-            definition = null;
+            bidResult = null;
             serviceError.printStackTrace();
 
         }
-        return definition;
+        return bidResult;
     }
 
 
